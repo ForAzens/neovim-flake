@@ -6,6 +6,7 @@ with pkgs.vimPlugins; [
   (nvim-treesitter.withPlugins
     (p: [ p.lua p.tsx p.sql p.nix p.css p.html p.yaml ]))
   lazygit-nvim
+  nvim-harpoon
 
   # theme
   tokyonight-nvim

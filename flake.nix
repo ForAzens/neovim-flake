@@ -2,31 +2,47 @@
   description = "DC Neovim Flake";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
+    flake-utils.url = "github:numtide/flake-utils";
     neovim = {
       url = "github:neovim/neovim/stable?dir=contrib";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
     };
+
+    # Nvim Plugin
+    harpoon = {
+      url = "github:ThePrimeagen/harpoon";
+      flake = false;
+      };
   };
-  outputs = { self, nixpkgs, neovim }:
+  outputs = inputs@{ self, nixpkgs, flake-utils, neovim, ... }:
+  flake-utils.lib.eachDefaultSystem
+  (system: 
     let
-      overlayFlakeInputs = prev: final: {
-        neovim = neovim.packages.x86_64-linux.neovim;
+      overlayFlakeInputs = final: prev: {
+        neovim = neovim.packages.${system}.neovim;
+
+        vimPlugins = prev.vimPlugins // {
+          nvim-harpoon = import ./plugins/harpoon.nix {
+            src = inputs.harpoon;
+            pkgs = prev;
+            };
+          };
       };
 
-      overlayMyNeovim = prev: final: {
-        myNeovim = import ./packages/myNeovim.nix { pkgs = final; };
+      overlayMyNeovim = final: prev: {
+        myNeovim = import ./packages/myNeovim.nix { pkgs = prev; };
       };
 
       pkgs = import nixpkgs {
-        system = "x86_64-linux";
+        inherit system;
         overlays = [ overlayFlakeInputs overlayMyNeovim ];
       };
     in {
-      packages.x86_64-linux.default = pkgs.myNeovim;
-      apps.x86_64-linux.default = {
+      packages.default = pkgs.myNeovim;
+      apps.default = {
         type = "app";
         program = "${pkgs.myNeovim}/bin/nvim";
       };
-
-    };
+    });
 }

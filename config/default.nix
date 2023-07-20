@@ -14,11 +14,10 @@ let
         src = ./${dir};
         installPhase = ''
           mkdir -p $out/
-          cp ./* $out/
+          cp -r ./* $out/
         '';
       };
-    in builtins.map (file: "${configDir}/${file}")
-    (builtins.attrNames (builtins.readDir configDir));
+    in (pkgs.lib.filesystem.listFilesRecursive configDir);
 
   sourceConfigFiles = files:
     builtins.concatStringsSep "\n" (builtins.map (file:
