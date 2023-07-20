@@ -1,7 +1,8 @@
 { pkgs, src }:
 
 pkgs.vimUtils.buildVimPlugin {
-  name = "nvim-harpoon";
+  name = "null_ls";
   inherit src;
   dontBuild = true;
 }
+

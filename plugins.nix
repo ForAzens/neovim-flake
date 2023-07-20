@@ -7,6 +7,7 @@ with pkgs.vimPlugins; [
     (p: [ p.lua p.tsx p.sql p.nix p.css p.html p.yaml ]))
   lazygit-nvim
   nvim-harpoon
+  null_ls
 
   # theme
   tokyonight-nvim
