@@ -34,8 +34,18 @@
     flake-utils.lib.eachDefaultSystem
       (system:
         let
+          lib = import ./lib { inherit pkgs; };
+
+          libOverlay = f: p: {
+            lib = p.lib.extend
+              (_: _: {
+                inherit (lib) writeIf;
+              });
+          };
+
+
           overlayFlakeInputs = final: prev: {
-            neovim = neovim.packages.${system}.neovim;
+            neovim = neovim.packages.${ system}.neovim;
 
             vimPlugins = prev.vimPlugins // {
               nvim-harpoon = import ./plugins/harpoon.nix {
@@ -56,10 +66,9 @@
 
           pkgs = import nixpkgs {
             inherit system;
-            overlays = [ overlayNilLsp overlayFlakeInputs ];
+            overlays = [ libOverlay overlayNilLsp overlayFlakeInputs ];
           };
 
-          lib = import ./lib { inherit pkgs; };
           inherit (lib) neovimBuilder;
 
           default-ide = pkgs.callPackage ./lib/ide.nix { inherit pkgs neovimBuilder; };

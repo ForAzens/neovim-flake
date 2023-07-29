@@ -6,8 +6,11 @@ let
   cfg = {
     vim = {
       core.enable = true;
+      which-key.enable = true;
       telescope.enable = true;
       lazygit.enable = true;
+      lsp.null_ls.enable = true;
+      lsp.nix.enable = true;
     };
   };
 in

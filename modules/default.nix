@@ -26,7 +26,9 @@ with lib;
   # Reverse the list because order is important, but the arrays are merged adding the last element first
   imports = lib.lists.reverseList [
     ./core
+    ./which-key
     ./telescope
     ./lazygit
+    ./lsp
   ];
 }

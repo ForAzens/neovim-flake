@@ -17,7 +17,7 @@ let
 
   neovimRuntimeDependencies = pkgs.symlinkJoin {
     name = "neovimRuntimeDependencies";
-    paths = vim.runtimeDeps;
+    paths = lib.lists.unique vim.runtimeDeps;
     postBuild = ''
       for f in $out/lib/node_modules/.bin/*; do
          path="$(readlink --canonicalize-missing "$f")"
@@ -29,7 +29,7 @@ let
   myNeovimUnwrapped = pkgs.wrapNeovim pkgs.neovim {
     configure = {
       inherit customRC;
-      packages.all.start = vim.plugins;
+      packages.all.start = lib.lists.unique vim.plugins;
     };
   };
 
