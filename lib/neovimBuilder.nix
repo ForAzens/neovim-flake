@@ -1,12 +1,23 @@
-{ pkgs }:
+{ pkgs, lib ? pkgs.lib, ... }:
+
+{ config }:
+
 let
-  customRC = import ../config { inherit pkgs; };
-  plugins = import ../plugins.nix { inherit pkgs; };
-  runtimeDeps = import ../runtimeDeps.nix { inherit pkgs; };
+  vimOptions = lib.evalModules {
+    modules = [
+      { imports = [ ../modules ]; }
+      config
+    ];
+    specialArgs = { inherit pkgs; };
+  };
+
+  inherit (vimOptions.config) vim;
+
+  customRC = builtins.concatStringsSep "\n" (builtins.map (file: "luafile ${file}") vim.luaFiles);
 
   neovimRuntimeDependencies = pkgs.symlinkJoin {
     name = "neovimRuntimeDependencies";
-    paths = runtimeDeps;
+    paths = vim.runtimeDeps;
     postBuild = ''
       for f in $out/lib/node_modules/.bin/*; do
          path="$(readlink --canonicalize-missing "$f")"
@@ -18,9 +29,10 @@ let
   myNeovimUnwrapped = pkgs.wrapNeovim pkgs.neovim {
     configure = {
       inherit customRC;
-      packages.all.start = plugins;
+      packages.all.start = vim.plugins;
     };
   };
+
 
 in
 pkgs.writeShellApplication {

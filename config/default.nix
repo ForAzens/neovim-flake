@@ -29,6 +29,16 @@ let
         + " ${file}")
       files);
 
+  config_paths = [ ./core ];
+
+  config = builtins.map
+    (path:
+      { }
+    )
+    config_paths;
+
+
+
   vim = scripts2ConfigFiles "vim";
   lua = scripts2ConfigFiles "lua";
   luanix = nixFiles2ConfigFiles "luanix";

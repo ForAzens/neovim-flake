@@ -54,22 +54,24 @@
             nixpkgs-fmt = inputs.nixpkgs-fmt.defaultPackage.${system};
           };
 
-
-          overlayMyNeovim = final: prev: {
-            myNeovim = import ./packages/myNeovim.nix { pkgs = final; };
-          };
-
           pkgs = import nixpkgs {
             inherit system;
-            overlays = [ overlayNilLsp overlayFlakeInputs overlayMyNeovim ];
+            overlays = [ overlayNilLsp overlayFlakeInputs ];
           };
 
+          lib = import ./lib { inherit pkgs; };
+          inherit (lib) neovimBuilder;
+
+          default-ide = pkgs.callPackage ./lib/ide.nix { inherit pkgs neovimBuilder; };
         in
+        rec
         {
-          packages.default = pkgs.myNeovim;
+          packages = {
+            default = default-ide.full;
+          };
           apps.default = {
             type = "app";
-            program = "${pkgs.myNeovim}/bin/nvim";
+            program = "${packages.default}/bin/nvim";
           };
         });
 }
