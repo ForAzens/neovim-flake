@@ -4,6 +4,12 @@ with lib;
 
 {
 
+  options.vim.coreLuaFiles = mkOption {
+    description = "List of lua files to source first";
+    type = with types; listOf package;
+    default = [ ];
+  };
+
   options.vim.luaFiles = mkOption {
     description = "List of lua files to source";
     type = with types; listOf package;

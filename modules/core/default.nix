@@ -5,7 +5,7 @@ with builtins;
 
 let
   cfg = config.vim.core;
-  content = readFile ./core.lua;
+  content = readFile ./core.lua + "\n" + readFile ./keymaps.lua + "\n" + readFile ./autocmds.lua;
   luaFile = pkgs.writeText "core.lua" content;
 in
 {
@@ -14,7 +14,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    vim.luaFiles = [ luaFile ];
+    vim.coreLuaFiles = [ luaFile ];
     vim.plugins = with pkgs.vimPlugins; [ tokyonight-nvim ];
   };
 }

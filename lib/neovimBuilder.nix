@@ -13,7 +13,7 @@ let
 
   inherit (vimOptions.config) vim;
 
-  customRC = builtins.concatStringsSep "\n" (builtins.map (file: "luafile ${file}") vim.luaFiles);
+  customRC = builtins.concatStringsSep "\n" (builtins.map (file: "luafile ${file}") (vim.coreLuaFiles ++ vim.luaFiles));
 
   neovimRuntimeDependencies = pkgs.symlinkJoin {
     name = "neovimRuntimeDependencies";

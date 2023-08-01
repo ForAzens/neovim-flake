@@ -39,7 +39,7 @@ in
 
   config = mkIf cfg.enable {
     vim.luaFiles = [ luaFile ];
-    vim.plugins = with pkgs.vimPlugins; [ which-key-nvim ];
+    vim.plugins = with pkgs.vimPlugins; [ which-key ];
   };
 }
 

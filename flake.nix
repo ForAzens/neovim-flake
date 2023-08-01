@@ -29,6 +29,10 @@
       url = "github:jose-elias-alvarez/null-ls.nvim";
       flake = false;
     };
+    which-key = {
+      url = "github:folke/which-key.nvim";
+      flake = false;
+    };
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, neovim, ... }:
     flake-utils.lib.eachDefaultSystem
@@ -54,6 +58,10 @@
               };
               null_ls = import ./plugins/null_ls.nix {
                 src = inputs.null_ls;
+                pkgs = prev;
+              };
+                which-key = import ./plugins/which-key.nix {
+                src = inputs.which-key;
                 pkgs = prev;
               };
             };
