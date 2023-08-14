@@ -6,5 +6,6 @@
     ./null_ls.nix
     ./lsp_keymap.nix
     ./ecmascript
+    ./ruby
   ];
 }

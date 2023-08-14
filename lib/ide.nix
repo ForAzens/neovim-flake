@@ -14,6 +14,7 @@ let
         null_ls.enable = true;
         nix.enable = true;
         ecmascript.enable = true;
+        ruby.enable = true;
       };
     };
   };
