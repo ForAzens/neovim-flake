@@ -9,9 +9,12 @@ let
       which-key.enable = true;
       telescope.enable = true;
       lazygit.enable = true;
-      lsp.null_ls.enable = true;
-      lsp.nix.enable = true;
       treesitter.enable = true;
+      lsp = {
+        null_ls.enable = true;
+        nix.enable = true;
+        ecmascript.enable = true;
+      };
     };
   };
 in
