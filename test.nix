@@ -19,5 +19,6 @@ let
     ];
     specialArgs = { inherit pkgs; };
   };
-in myConfig
-   #builtins.concatStringsSep "\n" (builtins.map (file: "luafile ${file}") myConfig.vim.luaFiles)
+in
+myConfig
+#builtins.concatStringsSep "\n" (builtins.map (file: "luafile ${file}") myConfig.vim.luaFiles)

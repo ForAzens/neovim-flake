@@ -11,6 +11,7 @@ let
       lazygit.enable = true;
       lsp.null_ls.enable = true;
       lsp.nix.enable = true;
+      treesitter.enable = true;
     };
   };
 in

@@ -36,5 +36,6 @@ with lib;
     ./telescope
     ./lazygit
     ./lsp
+    ./treesitter
   ];
 }
