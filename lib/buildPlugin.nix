@@ -18,7 +18,7 @@ in
   vimPlugins =
     let
       xs = listToAttrs (map (n: nameValuePair n (buildPlug n)) plugins);
-    in 
+    in
     prev.vimPlugins // xs;
-    
+
 }
