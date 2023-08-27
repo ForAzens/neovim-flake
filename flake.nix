@@ -38,7 +38,13 @@
     flake-utils.lib.eachDefaultSystem
       (system:
         let
-          lib = import ./lib { inherit pkgs; };
+          plugins = [
+            "harpoon"
+            "null_ls"
+            "which-key"
+          ];
+
+          lib = import ./lib { inherit pkgs inputs plugins; };
 
           libOverlay = f: p: {
             lib = p.lib.extend
@@ -47,25 +53,27 @@
               });
           };
 
+          pluginOverlay = lib.buildPluginOverlay;
 
-          overlayFlakeInputs = final: prev: {
-            neovim = neovim.packages.${ system}.neovim;
 
-            vimPlugins = prev.vimPlugins // {
-              nvim-harpoon = import ./plugins/harpoon.nix {
-                src = inputs.harpoon;
-                pkgs = prev;
-              };
-              null_ls = import ./plugins/null_ls.nix {
-                src = inputs.null_ls;
-                pkgs = prev;
-              };
-                which-key = import ./plugins/which-key.nix {
-                src = inputs.which-key;
-                pkgs = prev;
-              };
-            };
-          };
+          # overlayFlakeInputs = final: prev: {
+          #   neovim = neovim.packages.${ system}.neovim;
+          #
+          #   vimPlugins = prev.vimPlugins // {
+          #     nvim-harpoon = import ./plugins/harpoon.nix {
+          #       src = inputs.harpoon;
+          #       pkgs = prev;
+          #     };
+          #     null_ls = import ./plugins/null_ls.nix {
+          #       src = inputs.null_ls;
+          #       pkgs = prev;
+          #     };
+          #     which-key = import ./plugins/which-key.nix {
+          #       src = inputs.which-key;
+          #       pkgs = prev;
+          #     };
+          #   };
+          # };
 
           overlayNilLsp = final: prev: {
             nil_ls = inputs.nil_ls.packages.${system}.nil;
@@ -74,7 +82,7 @@
 
           pkgs = import nixpkgs {
             inherit system;
-            overlays = [ libOverlay overlayNilLsp overlayFlakeInputs ];
+            overlays = [ libOverlay overlayNilLsp pluginOverlay ];
           };
 
           inherit (lib) neovimBuilder;
@@ -83,6 +91,10 @@
         in
         rec
         {
+          debug = {
+            overridesPkgs = pkgs;
+
+            };
           packages = {
             default = default-ide.full;
           };
