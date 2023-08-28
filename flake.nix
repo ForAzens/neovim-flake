@@ -33,6 +33,35 @@
       url = "github:folke/which-key.nvim";
       flake = false;
     };
+
+    nvim-cmp = {
+      url = "github:hrsh7th/nvim-cmp";
+      flake = false;
+    };
+    cmp-nvim-lsp = {
+      url = "github:hrsh7th/cmp-nvim-lsp";
+      flake = false;
+    };
+    cmp-buffer = {
+      url = "github:hrsh7th/cmp-buffer";
+      flake = false;
+    };
+    cmp-path = {
+      url = "github:hrsh7th/cmp-path";
+      flake = false;
+    };
+    cmp-cmdline = {
+      url = "github:hrsh7th/cmp-cmdline";
+      flake = false;
+    };
+    luasnip = {
+      url = "github:L3MON4D3/LuaSnip";
+      flake = false;
+    };
+    cmp-luasnip = {
+      url = "github:saadparwaiz1/cmp_luasnip";
+      flake = false;
+    };
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, neovim, ... }:
     flake-utils.lib.eachDefaultSystem
@@ -42,6 +71,13 @@
             "harpoon"
             "null_ls"
             "which-key"
+            "nvim-cmp"
+            "cmp-nvim-lsp"
+            "cmp-buffer"
+            "cmp-path"
+            "cmp-cmdline"
+            "luasnip"
+            "cmp-luasnip"
           ];
 
           lib = import ./lib { inherit pkgs inputs plugins; };
@@ -54,7 +90,6 @@
           };
 
           pluginOverlay = lib.buildPluginOverlay;
-
 
           neovimOverlay = final: prev: {
             neovim = neovim.packages.${ system}.neovim;

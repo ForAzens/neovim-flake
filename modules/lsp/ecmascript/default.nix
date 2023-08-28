@@ -7,7 +7,10 @@ let
   cfg = config.vim.lsp.ecmascript;
   content = ''
     local nvim_lsp = require("lspconfig")
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
     nvim_lsp.tsserver.setup({
+      capabilities = capabilities,
       init_options = {
         tsserver = {
           path = "${pkgs.nodePackages.typescript}/bin/tsserver"

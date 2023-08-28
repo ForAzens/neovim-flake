@@ -7,8 +7,16 @@ let
   cfg = config.vim.lsp.nix;
   content = ''
     local nvim_lsp = require("lspconfig")
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
     nvim_lsp.nil_ls.setup({
+      capabilities = capabilities,
       cmd = { "${pkgs.nil}/bin/nil" },
+      init_options = {
+        nil_ls = {
+          path = "${pkgs.nil}/bin/nil"
+        }
+      }
       });
   '';
   luaFile = pkgs.writeText "nix.lua" content;

@@ -7,7 +7,12 @@ let
   cfg = config.vim.lsp.ruby;
   content = ''
     local nvim_lsp = require("lspconfig")
-    nvim_lsp.solargraph.setup({});
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+    nvim_lsp.solargraph.setup({
+      capabilities = capabilities,
+
+      });
   '';
   luaFile = pkgs.writeText "ruby_lsp.lua" content;
 in
