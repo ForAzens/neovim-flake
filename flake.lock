@@ -168,6 +168,22 @@
         "type": "github"
       }
     },
+    "lualine-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1691046210,
+        "narHash": "sha256-v8finXk+sLNaFMA7pSHhEu0WF5mhPYWHEKhl0IKBv8c=",
+        "owner": "nvim-lualine",
+        "repo": "lualine.nvim",
+        "rev": "45e27ca739c7be6c49e5496d14fcf45a303c3a63",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-lualine",
+        "repo": "lualine.nvim",
+        "type": "github"
+      }
+    },
     "luasnip": {
       "flake": false,
       "locked": {
@@ -378,6 +394,7 @@
         "fidget-nvim": "fidget-nvim",
         "flake-utils": "flake-utils",
         "harpoon": "harpoon",
+        "lualine-nvim": "lualine-nvim",
         "luasnip": "luasnip",
         "neovim": "neovim",
         "nil_ls": "nil_ls",

@@ -84,6 +84,11 @@
       url = "github:MunifTanjim/nui.nvim";
       flake = false;
     };
+
+    lualine-nvim = {
+      url = "github:nvim-lualine/lualine.nvim";
+      flake = false;
+    };
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, neovim, ... }:
     flake-utils.lib.eachDefaultSystem
@@ -106,6 +111,8 @@
             "plenary-nvim"
             "nvim-web-devicons"
             "nvim-nui"
+
+            "lualine-nvim"
           ];
 
           lib = import ./lib { inherit pkgs inputs plugins; };

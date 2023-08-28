@@ -38,5 +38,6 @@ with lib;
     ./lsp
     ./treesitter
     ./neotree.nix
+    ./lualine.nix
   ];
 }

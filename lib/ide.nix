@@ -7,6 +7,7 @@ let
     vim = {
       ui = {
           filetree.enable = true;
+          lualine.enable = true;
         };
       core.enable = true;
       which-key.enable = true;
