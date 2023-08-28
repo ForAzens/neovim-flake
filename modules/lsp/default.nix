@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./fidget.nix
     ./nvim-cmp.nix
     ./nix
     ./null_ls.nix

@@ -62,6 +62,10 @@
       url = "github:saadparwaiz1/cmp_luasnip";
       flake = false;
     };
+    fidget-nvim = {
+      url = "github:j-hui/fidget.nvim/legacy";
+      flake = false;
+    };
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, neovim, ... }:
     flake-utils.lib.eachDefaultSystem
@@ -78,6 +82,7 @@
             "cmp-cmdline"
             "luasnip"
             "cmp-luasnip"
+            "fidget-nvim"
           ];
 
           lib = import ./lib { inherit pkgs inputs plugins; };
