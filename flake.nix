@@ -89,6 +89,29 @@
       url = "github:nvim-lualine/lualine.nvim";
       flake = false;
     };
+
+    mini-pairs = {
+      url = "github:echasnovski/mini.pairs/stable";
+      flake = false;
+    };
+    mini-indentscope = {
+      url = "github:echasnovski/mini.indentscope/stable";
+      flake = false;
+    };
+    indent-blankline = {
+      url = "github:lukas-reineke/indent-blankline.nvim";
+      flake = false;
+    };
+
+    mini-comment = {
+      url = "github:echasnovski/mini.comment/stable";
+      flake = false;
+    };
+    nvim-ts-context-commentstring = {
+      url = "github:JoosepAlviste/nvim-ts-context-commentstring";
+      flake = false;
+    };
+
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, neovim, ... }:
     flake-utils.lib.eachDefaultSystem
@@ -113,6 +136,11 @@
             "nvim-nui"
 
             "lualine-nvim"
+            "mini-pairs"
+            "mini-indentscope"
+            "indent-blankline"
+            "mini-comment"
+            "nvim-ts-context-commentstring"
           ];
 
           lib = import ./lib { inherit pkgs inputs plugins; };

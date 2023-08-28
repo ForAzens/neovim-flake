@@ -168,6 +168,22 @@
         "type": "github"
       }
     },
+    "indent-blankline": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1692667843,
+        "narHash": "sha256-1EpjFIJ5GK9NXS6dTMJ71w/AtLtR6Q5HrAXCIRNOBAY=",
+        "owner": "lukas-reineke",
+        "repo": "indent-blankline.nvim",
+        "rev": "9637670896b68805430e2f72cf5d16be5b97a22a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lukas-reineke",
+        "repo": "indent-blankline.nvim",
+        "type": "github"
+      }
+    },
     "lualine-nvim": {
       "flake": false,
       "locked": {
@@ -197,6 +213,57 @@
       "original": {
         "owner": "L3MON4D3",
         "repo": "LuaSnip",
+        "type": "github"
+      }
+    },
+    "mini-comment": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1685013431,
+        "narHash": "sha256-oeXDsSlXHnVt2EcTlJZOdATs90TpWUX+yfKKhxALnZo=",
+        "owner": "echasnovski",
+        "repo": "mini.comment",
+        "rev": "877acea5b2a32ff55f808fc0ebe9aa898648318c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "echasnovski",
+        "ref": "stable",
+        "repo": "mini.comment",
+        "type": "github"
+      }
+    },
+    "mini-indentscope": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1683192076,
+        "narHash": "sha256-lqy5GMi0J90X7TDrp4ao5Mp6FmBascfJhLjLurq1TMA=",
+        "owner": "echasnovski",
+        "repo": "mini.indentscope",
+        "rev": "f60e9b51a6214c73a170ffc5445ce91560981031",
+        "type": "github"
+      },
+      "original": {
+        "owner": "echasnovski",
+        "ref": "stable",
+        "repo": "mini.indentscope",
+        "type": "github"
+      }
+    },
+    "mini-pairs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1683192077,
+        "narHash": "sha256-JYdgXgRtNTLioK9cDxTEf/j0QSCwRMDt7Eb2EdyI/+c=",
+        "owner": "echasnovski",
+        "repo": "mini.pairs",
+        "rev": "963b800d0524eadd297199207011b98684205ada",
+        "type": "github"
+      },
+      "original": {
+        "owner": "echasnovski",
+        "ref": "stable",
+        "repo": "mini.pairs",
         "type": "github"
       }
     },
@@ -352,6 +419,22 @@
         "type": "github"
       }
     },
+    "nvim-ts-context-commentstring": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1692306636,
+        "narHash": "sha256-+U0zpKyr2lnq0Sqkw+/XujNACsrRdrlAQZ6qKG+qiC0=",
+        "owner": "JoosepAlviste",
+        "repo": "nvim-ts-context-commentstring",
+        "rev": "9bff161dfece6ecf3459e6e46ca42e49f9ed939f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JoosepAlviste",
+        "repo": "nvim-ts-context-commentstring",
+        "type": "github"
+      }
+    },
     "nvim-web-devicons": {
       "flake": false,
       "locked": {
@@ -394,8 +477,12 @@
         "fidget-nvim": "fidget-nvim",
         "flake-utils": "flake-utils",
         "harpoon": "harpoon",
+        "indent-blankline": "indent-blankline",
         "lualine-nvim": "lualine-nvim",
         "luasnip": "luasnip",
+        "mini-comment": "mini-comment",
+        "mini-indentscope": "mini-indentscope",
+        "mini-pairs": "mini-pairs",
         "neovim": "neovim",
         "nil_ls": "nil_ls",
         "nixpkgs": "nixpkgs",
@@ -404,6 +491,7 @@
         "nvim-cmp": "nvim-cmp",
         "nvim-neo-tree": "nvim-neo-tree",
         "nvim-nui": "nvim-nui",
+        "nvim-ts-context-commentstring": "nvim-ts-context-commentstring",
         "nvim-web-devicons": "nvim-web-devicons",
         "plenary-nvim": "plenary-nvim",
         "which-key": "which-key"

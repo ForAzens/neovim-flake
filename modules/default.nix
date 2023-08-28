@@ -37,6 +37,7 @@ with lib;
     ./lazygit
     ./lsp
     ./treesitter
+    ./editor
     ./neotree.nix
     ./lualine.nix
   ];

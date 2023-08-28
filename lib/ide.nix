@@ -6,9 +6,14 @@ let
   cfg = {
     vim = {
       ui = {
-          filetree.enable = true;
-          lualine.enable = true;
-        };
+        filetree.enable = true;
+        lualine.enable = true;
+      };
+      editor = {
+        autopairs.enable = true;
+        indentscope.enable = true;
+        comment.enable = true;
+      };
       core.enable = true;
       which-key.enable = true;
       telescope.enable = true;
