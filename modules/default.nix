@@ -37,5 +37,6 @@ with lib;
     ./lazygit
     ./lsp
     ./treesitter
+    ./neotree.nix
   ];
 }

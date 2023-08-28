@@ -5,6 +5,9 @@ let
 
   cfg = {
     vim = {
+      ui = {
+          filetree.enable = true;
+        };
       core.enable = true;
       which-key.enable = true;
       telescope.enable = true;

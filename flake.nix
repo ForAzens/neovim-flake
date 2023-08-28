@@ -66,6 +66,24 @@
       url = "github:j-hui/fidget.nvim/legacy";
       flake = false;
     };
+
+
+    nvim-neo-tree = {
+      url = "github:nvim-neo-tree/neo-tree.nvim/v3.x";
+      flake = false;
+    };
+    plenary-nvim = {
+      url = "github:nvim-lua/plenary.nvim";
+      flake = false;
+    };
+    nvim-web-devicons = {
+      url = "github:nvim-tree/nvim-web-devicons";
+      flake = false;
+    };
+    nvim-nui = {
+      url = "github:MunifTanjim/nui.nvim";
+      flake = false;
+    };
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, neovim, ... }:
     flake-utils.lib.eachDefaultSystem
@@ -83,6 +101,11 @@
             "luasnip"
             "cmp-luasnip"
             "fidget-nvim"
+
+            "nvim-neo-tree"
+            "plenary-nvim"
+            "nvim-web-devicons"
+            "nvim-nui"
           ];
 
           lib = import ./lib { inherit pkgs inputs plugins; };

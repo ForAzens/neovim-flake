@@ -303,6 +303,71 @@
         "type": "github"
       }
     },
+    "nvim-neo-tree": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1693067247,
+        "narHash": "sha256-gP/C1AJX2UXPZ0x8r/vMsnOjIVe7Hk977yrVb1DIrtI=",
+        "owner": "nvim-neo-tree",
+        "repo": "neo-tree.nvim",
+        "rev": "9b5b4c874b13e372500f07c37187ba06c0c1ac0a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-neo-tree",
+        "ref": "v3.x",
+        "repo": "neo-tree.nvim",
+        "type": "github"
+      }
+    },
+    "nvim-nui": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1693131925,
+        "narHash": "sha256-2vYwa0ERb5ogFnkJQSM1GhQ9uZmVTw7IWFQeb49NYs8=",
+        "owner": "MunifTanjim",
+        "repo": "nui.nvim",
+        "rev": "0f913a3ae1a24c8a4487fbf111b4044cc22b1b0d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MunifTanjim",
+        "repo": "nui.nvim",
+        "type": "github"
+      }
+    },
+    "nvim-web-devicons": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1692224430,
+        "narHash": "sha256-6iuZbUi7MA69/wIMijCWj3J1s2RrCWKxQ/l7fWDnOF0=",
+        "owner": "nvim-tree",
+        "repo": "nvim-web-devicons",
+        "rev": "cfc8824cc1db316a276b36517f093baccb8e799a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-tree",
+        "repo": "nvim-web-devicons",
+        "type": "github"
+      }
+    },
+    "plenary-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1692890974,
+        "narHash": "sha256-TcjgafIbwNXxoAO5wrf/Wr6sZHJtfpHU9R7RIjBZgkg=",
+        "owner": "nvim-lua",
+        "repo": "plenary.nvim",
+        "rev": "0dbe561ae023f02c2fb772b879e905055b939ce3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-lua",
+        "repo": "plenary.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "cmp-buffer": "cmp-buffer",
@@ -320,6 +385,10 @@
         "nixpkgs-fmt": "nixpkgs-fmt",
         "null_ls": "null_ls",
         "nvim-cmp": "nvim-cmp",
+        "nvim-neo-tree": "nvim-neo-tree",
+        "nvim-nui": "nvim-nui",
+        "nvim-web-devicons": "nvim-web-devicons",
+        "plenary-nvim": "plenary-nvim",
         "which-key": "which-key"
       }
     },
