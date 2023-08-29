@@ -34,6 +34,7 @@ let
           }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         }),
         sources = cmp.config.sources({
+          ${writeIf config.vim.lsp.copilot.enable "{ name = 'copilot-cmp' },"}
           { name = 'nvim_lsp' },
           { name = 'luasnip' }, -- For luasnip users.
         }, {

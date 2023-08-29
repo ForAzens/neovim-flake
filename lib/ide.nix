@@ -21,6 +21,7 @@ let
       lazygit.enable = true;
       treesitter.enable = true;
       lsp = {
+        copilot.enable = true;
         ui.enable = true;
         autocomplete.enable = true;
         null_ls.enable = true;

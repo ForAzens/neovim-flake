@@ -117,6 +117,15 @@
       flake = false;
     };
 
+    copilot-lua = {
+      url = "github:zbirenbaum/copilot.lua";
+      flake = false;
+    };
+    copilot-cmp = {
+      url = "github:zbirenbaum/copilot-cmp";
+      flake = false;
+    };
+
 
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, neovim, ... }:
@@ -149,6 +158,9 @@
             "nvim-ts-context-commentstring"
 
             "smart-splits"
+
+            "copilot-lua"
+            "copilot-cmp"
           ];
 
           lib = import ./lib { inherit pkgs inputs plugins; };

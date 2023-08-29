@@ -9,5 +9,6 @@
     ./lsp_keymap.nix
     ./ecmascript
     ./ruby
+    ./copilot.nix
   ];
 }

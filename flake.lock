@@ -80,6 +80,38 @@
         "type": "github"
       }
     },
+    "copilot-cmp": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1691631474,
+        "narHash": "sha256-OUWcwJqKA4r34S3biY7zd66uCLkeuGAGC6KRm6JLWqQ=",
+        "owner": "zbirenbaum",
+        "repo": "copilot-cmp",
+        "rev": "d631b3afbf26bb17d6cf2b3cd8f3d79e7d5eeca1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zbirenbaum",
+        "repo": "copilot-cmp",
+        "type": "github"
+      }
+    },
+    "copilot-lua": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1692943138,
+        "narHash": "sha256-+xX1GiaqkrESPLBd9r2r/xkHW9Nj8ehS0DcT9D5kE9Q=",
+        "owner": "zbirenbaum",
+        "repo": "copilot.lua",
+        "rev": "0fa30d6846aae1af1c94a9ead93fa7dcf8affbe6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zbirenbaum",
+        "repo": "copilot.lua",
+        "type": "github"
+      }
+    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -474,6 +506,8 @@
         "cmp-luasnip": "cmp-luasnip",
         "cmp-nvim-lsp": "cmp-nvim-lsp",
         "cmp-path": "cmp-path",
+        "copilot-cmp": "copilot-cmp",
+        "copilot-lua": "copilot-lua",
         "fidget-nvim": "fidget-nvim",
         "flake-utils": "flake-utils",
         "harpoon": "harpoon",
