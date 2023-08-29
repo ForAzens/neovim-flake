@@ -13,6 +13,7 @@ let
         autopairs.enable = true;
         indentscope.enable = true;
         comment.enable = true;
+        tmux-integration.enable = true;
       };
       core.enable = true;
       which-key.enable = true;

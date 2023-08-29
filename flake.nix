@@ -112,6 +112,12 @@
       flake = false;
     };
 
+    smart-splits = {
+      url = "github:mrjones2014/smart-splits.nvim";
+      flake = false;
+    };
+
+
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, neovim, ... }:
     flake-utils.lib.eachDefaultSystem
@@ -141,6 +147,8 @@
             "indent-blankline"
             "mini-comment"
             "nvim-ts-context-commentstring"
+
+            "smart-splits"
           ];
 
           lib = import ./lib { inherit pkgs inputs plugins; };

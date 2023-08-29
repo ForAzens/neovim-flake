@@ -494,6 +494,7 @@
         "nvim-ts-context-commentstring": "nvim-ts-context-commentstring",
         "nvim-web-devicons": "nvim-web-devicons",
         "plenary-nvim": "plenary-nvim",
+        "smart-splits": "smart-splits",
         "which-key": "which-key"
       }
     },
@@ -536,6 +537,22 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "smart-splits": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1687779152,
+        "narHash": "sha256-mLLh8rcq5D6dA9Iwn3ULiHRG/jI4Sjct4J498C+QPO8=",
+        "owner": "mrjones2014",
+        "repo": "smart-splits.nvim",
+        "rev": "7aad6019dee974a01333523a5b8e122b7e7da454",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mrjones2014",
+        "repo": "smart-splits.nvim",
         "type": "github"
       }
     },
