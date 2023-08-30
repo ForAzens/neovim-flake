@@ -8,6 +8,7 @@ let
   content = ''
     local nvim_lsp = require("lspconfig")
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    capabilities.documentFormattingProvider = false
 
     nvim_lsp.tsserver.setup({
       capabilities = capabilities,
