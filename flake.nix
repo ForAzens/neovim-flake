@@ -126,6 +126,11 @@
       flake = false;
     };
 
+    vim-illuminate = {
+      url = "github:RRethy/vim-illuminate";
+      flake = false;
+    };
+
 
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, neovim, ... }:
@@ -161,6 +166,8 @@
 
             "copilot-lua"
             "copilot-cmp"
+
+            "vim-illuminate"
           ];
 
           lib = import ./lib { inherit pkgs inputs plugins; };

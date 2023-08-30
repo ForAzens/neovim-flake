@@ -529,6 +529,7 @@
         "nvim-web-devicons": "nvim-web-devicons",
         "plenary-nvim": "plenary-nvim",
         "smart-splits": "smart-splits",
+        "vim-illuminate": "vim-illuminate",
         "which-key": "which-key"
       }
     },
@@ -602,6 +603,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "vim-illuminate": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1692284683,
+        "narHash": "sha256-ZFDGJt4N+IAtjnqjxittd7id2jIOK/o1GszXQXYy370=",
+        "owner": "RRethy",
+        "repo": "vim-illuminate",
+        "rev": "76f28e858f1caae87bfa45fb4fd09e4b053fc45b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "RRethy",
+        "repo": "vim-illuminate",
         "type": "github"
       }
     },

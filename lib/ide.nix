@@ -14,6 +14,7 @@ let
         indentscope.enable = true;
         comment.enable = true;
         tmux-integration.enable = true;
+        illuminate.enable = true;
       };
       core.enable = true;
       which-key.enable = true;
