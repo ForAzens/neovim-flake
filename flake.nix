@@ -66,6 +66,10 @@
       url = "github:j-hui/fidget.nvim/legacy";
       flake = false;
     };
+    lspkind = {
+      url = "github:onsails/lspkind.nvim";
+      flake = false;
+    };
 
 
     nvim-neo-tree = {
@@ -131,7 +135,6 @@
       flake = false;
     };
 
-
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, neovim, ... }:
     flake-utils.lib.eachDefaultSystem
@@ -149,6 +152,7 @@
             "luasnip"
             "cmp-luasnip"
             "fidget-nvim"
+            "lspkind"
 
             "nvim-neo-tree"
             "plenary-nvim"

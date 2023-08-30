@@ -216,6 +216,22 @@
         "type": "github"
       }
     },
+    "lspkind": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1683275543,
+        "narHash": "sha256-S+qZm51hw/cRujIfHV/1x1fYyCKI4XQ0utSL8uy4l6I=",
+        "owner": "onsails",
+        "repo": "lspkind.nvim",
+        "rev": "57610d5ab560c073c465d6faf0c19f200cb67e6e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "onsails",
+        "repo": "lspkind.nvim",
+        "type": "github"
+      }
+    },
     "lualine-nvim": {
       "flake": false,
       "locked": {
@@ -512,6 +528,7 @@
         "flake-utils": "flake-utils",
         "harpoon": "harpoon",
         "indent-blankline": "indent-blankline",
+        "lspkind": "lspkind",
         "lualine-nvim": "lualine-nvim",
         "luasnip": "luasnip",
         "mini-comment": "mini-comment",
