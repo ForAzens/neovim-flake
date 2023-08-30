@@ -515,6 +515,22 @@
         "type": "github"
       }
     },
+    "prettierd": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1693235558,
+        "narHash": "sha256-F5DGfMTmmXQLKMQqMm20vWEvcoQG/9VQNMjUS23avG8=",
+        "owner": "fsouza",
+        "repo": "prettierd",
+        "rev": "7206b678a4baeee7bde59132668772ca5d76e55f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fsouza",
+        "repo": "prettierd",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "cmp-buffer": "cmp-buffer",
@@ -545,6 +561,7 @@
         "nvim-ts-context-commentstring": "nvim-ts-context-commentstring",
         "nvim-web-devicons": "nvim-web-devicons",
         "plenary-nvim": "plenary-nvim",
+        "prettierd": "prettierd",
         "smart-splits": "smart-splits",
         "vim-illuminate": "vim-illuminate",
         "which-key": "which-key"

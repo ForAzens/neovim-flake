@@ -6,4 +6,5 @@
     inherit pkgs;
   };
   buildPluginOverlay = import ./buildPlugin.nix { inherit pkgs inputs plugins; };
+  buildPrettierd = import ./buildPrettierd.nix { inherit pkgs inputs plugins; };
 }

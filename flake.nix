@@ -20,6 +20,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    prettierd = {
+      url = "github:fsouza/prettierd";
+      flake = false;
+    };
+
     # Nvim Plugin
     harpoon = {
       url = "github:ThePrimeagen/harpoon";
@@ -194,9 +199,11 @@
             nixpkgs-fmt = inputs.nixpkgs-fmt.defaultPackage.${system};
           };
 
+          overlayPrettierd = lib.buildPrettierd;
+
           pkgs = import nixpkgs {
             inherit system;
-            overlays = [ libOverlay neovimOverlay overlayNilLsp pluginOverlay ];
+            overlays = [ libOverlay overlayPrettierd neovimOverlay overlayNilLsp pluginOverlay ];
           };
 
           inherit (lib) neovimBuilder;
@@ -207,6 +214,7 @@
         {
           packages = {
             default = default-ide.full;
+            pkgs = pkgs;
           };
           apps.default = {
             type = "app";

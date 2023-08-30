@@ -13,7 +13,7 @@ let
           ${writeIf cfg.nix.enable "null_ls.builtins.formatting.nixpkgs_fmt,"}
           ${writeIf cfg.ecmascript.enable ''
             null_ls.builtins.code_actions.eslint_d,
-            null_ls.builtins.formatting.prettier_d_slim,
+            null_ls.builtins.formatting.prettierd,
           ''}
           ${writeIf cfg.ruby.enable "null_ls.builtins.formatting.rubocop,"}
         },
