@@ -1,4 +1,4 @@
-vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme dracula]])
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

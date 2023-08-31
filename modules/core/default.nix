@@ -15,6 +15,6 @@ in
 
   config = mkIf cfg.enable {
     vim.coreLuaFiles = [ luaFile ];
-    vim.plugins = with pkgs.vimPlugins; [ tokyonight-nvim ];
+    vim.plugins = with pkgs.vimPlugins; [ tokyonight-nvim dracula-nvim ];
   };
 }

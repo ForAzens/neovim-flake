@@ -6,7 +6,10 @@ with builtins;
 let
   cfg = config.vim.treesitter;
   content = ''
-    require'nvim-treesitter.configs'.setup {}
+    require'nvim-treesitter.configs'.setup {
+        highlight = { enable = true },
+        indent = { enable = true },
+      }
   '';
   luaFile = pkgs.writeText "treesitter.lua" content;
 
@@ -28,6 +31,7 @@ let
     json
     html
     bash
+    fish
   ] ++ cfg.parsers;
 in
 {
