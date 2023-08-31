@@ -37,7 +37,7 @@ let
 in
 pkgs.writeShellApplication {
   name = "nvim";
-  runtimeInputs = [ neovimRuntimeDependencies ];
+  runtimeInputs = [ neovimRuntimeDependencies pkgs.nodejs_18 ];
   text = ''
     ${myNeovimUnwrapped}/bin/nvim "$@"
   '';
