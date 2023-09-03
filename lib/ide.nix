@@ -22,6 +22,7 @@ let
       lazygit.enable = true;
       treesitter.enable = true;
       lsp = {
+        tailwindcss.enable = true;
         copilot.enable = true;
         ui.enable = true;
         autocomplete.enable = true;

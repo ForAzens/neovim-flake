@@ -10,5 +10,6 @@
     ./ecmascript
     ./ruby
     ./copilot.nix
+    ./tailwindcss.nix
   ];
 }

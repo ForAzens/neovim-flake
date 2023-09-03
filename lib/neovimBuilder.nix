@@ -21,7 +21,7 @@ let
     postBuild = ''
       for f in $out/lib/node_modules/.bin/*; do
          path="$(readlink --canonicalize-missing "$f")"
-         ln -s "$path" "$out/bin/$(basename $f)"
+         ln -nsf "$path" "$out/bin/$(basename $f)"
       done
     '';
   };
