@@ -7,7 +7,7 @@ let
   cfg = config.vim.lsp.tailwindcss;
   content = ''
     local nvim_lsp = require("lspconfig")
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
     capabilities.documentFormattingProvider = false
 
     nvim_lsp.tailwindcss.setup({
@@ -15,15 +15,25 @@ let
       init_options = {
         tailwindcss = {
           path = "${pkgs.nodePackages."@tailwindcss/language-server"}/bin/tailwindcss-language-server"
-        }
-      }
-    });
+        },
+      },
+      settings = {
+        tailwindCSS = {
+          experimental = {
+            classRegex = {
+              { "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+              { "cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" }
+            },
+          },
+        },
+      },
+    })
   '';
   luaFile = pkgs.writeText "tailwindcss.lua" content;
 in
 {
   options.vim.lsp.tailwindcss = {
-    enable = mkEnableOption "Enable TS Server";
+    enable = mkEnableOption "Enable TailwindCSS LSP";
   };
 
   config = mkIf cfg.enable {
