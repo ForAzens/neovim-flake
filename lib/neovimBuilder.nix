@@ -13,22 +13,15 @@ let
 
   inherit (vimOptions.config) vim;
 
-  customRC = builtins.concatStringsSep "\n" (builtins.map (file: "luafile ${file}") (vim.coreLuaFiles ++ vim.luaFiles));
+  pluginsRC = builtins.concatStringsSep "\n" (builtins.map (file: "luafile ${file}") (vim.coreLuaFiles ++ vim.luaFiles));
 
-  neovimRuntimeDependencies = pkgs.symlinkJoin {
-    name = "neovimRuntimeDependencies";
-    paths = lib.lists.unique vim.runtimeDeps;
-    postBuild = ''
-      for f in $out/lib/node_modules/.bin/*; do
-         path="$(readlink --canonicalize-missing "$f")"
-         ln -nsf "$path" "$out/bin/$(basename $f)"
-      done
-    '';
-  };
+  runtime' = lib.lists.unique vim.runtimeDeps;
 
   myNeovimUnwrapped = pkgs.wrapNeovim pkgs.neovim {
     configure = {
-      inherit customRC;
+      customRC = ''
+      ${pluginsRC}
+      '';
       packages.all.start = lib.lists.unique vim.plugins;
     };
   };
@@ -37,7 +30,7 @@ let
 in
 pkgs.writeShellApplication {
   name = "nvim";
-  runtimeInputs = [ neovimRuntimeDependencies pkgs.nodejs_18 ];
+  runtimeInputs = [ pkgs.nodejs_18 ] ++ runtime';
   text = ''
     ${myNeovimUnwrapped}/bin/nvim "$@"
   '';
