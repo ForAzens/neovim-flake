@@ -40,5 +40,6 @@ with lib;
     ./editor
     ./neotree.nix
     ./lualine.nix
+    ./harpoon.nix
   ];
 }

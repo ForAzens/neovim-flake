@@ -8,6 +8,7 @@ let
       ui = {
         filetree.enable = true;
         lualine.enable = true;
+        harpoon.enable = true;
       };
       editor = {
         autopairs.enable = true;
