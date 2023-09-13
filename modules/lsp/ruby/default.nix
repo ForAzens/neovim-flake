@@ -11,8 +11,7 @@ let
 
     nvim_lsp.solargraph.setup({
       capabilities = capabilities,
-
-      });
+    });
   '';
   luaFile = pkgs.writeText "ruby_lsp.lua" content;
 in
@@ -24,10 +23,6 @@ in
   config = mkIf cfg.enable {
     vim.luaFiles = [ luaFile ];
     vim.plugins = with pkgs.vimPlugins; [ nvim-lspconfig ];
-    vim.runtimeDeps = with pkgs; [ 
-    rubyPackages_3_2.rubocop
-    rubyPackages_3_2.solargraph
-    ];
   };
 }
 
