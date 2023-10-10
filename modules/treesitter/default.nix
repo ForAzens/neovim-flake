@@ -16,6 +16,8 @@ let
   parsers = with pkgs.vimPlugins.nvim-treesitter-parsers; [
     zig
     vim
+    javascript
+    typescript
     tsx
     sql
     nix
