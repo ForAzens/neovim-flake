@@ -17,10 +17,6 @@ let
             null_ls.builtins.formatting.eslint_d,
             null_ls.builtins.formatting.prettier,
           ''}
-          ${writeIf cfg.ruby.enable ''null_ls.builtins.formatting.rubocop.with({
-              command = "bundle",
-              args = vim.list_extend({ "exec", "rubocop" }, null_ls.builtins.formatting.rubocop._opts.args),
-            })''}
         },
     })
   '';
