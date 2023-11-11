@@ -468,6 +468,22 @@
         "type": "github"
       }
     },
+    "nvim-surround": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1699661439,
+        "narHash": "sha256-oz2M0iLSwd+hwgj5cUgqdsIbdTHza4thz3ubcSiqNmQ=",
+        "owner": "kylechui",
+        "repo": "nvim-surround",
+        "rev": "cfa2da7f469f1e759f2a961bc25fa4ccfe1795c2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kylechui",
+        "repo": "nvim-surround",
+        "type": "github"
+      }
+    },
     "nvim-ts-context-commentstring": {
       "flake": false,
       "locked": {
@@ -591,6 +607,7 @@
         "nvim-cmp": "nvim-cmp",
         "nvim-neo-tree": "nvim-neo-tree",
         "nvim-nui": "nvim-nui",
+        "nvim-surround": "nvim-surround",
         "nvim-ts-context-commentstring": "nvim-ts-context-commentstring",
         "nvim-ufo": "nvim-ufo",
         "nvim-web-devicons": "nvim-web-devicons",

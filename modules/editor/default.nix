@@ -8,5 +8,6 @@
     ./tmux-integration.nix
     ./illuminate.nix
     ./fold.nix
+    ./surround.nix
   ];
 }

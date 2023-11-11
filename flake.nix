@@ -150,6 +150,11 @@
       flake = false;
     };
 
+    nvim-surround = {
+      url = "github:kylechui/nvim-surround";
+      flake = false;
+    };
+
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, neovim, ... }:
     flake-utils.lib.eachDefaultSystem
@@ -189,6 +194,7 @@
             "vim-illuminate"
             "nvim-ufo"
             "promise-async"
+            "nvim-surround"
           ];
 
           lib = import ./lib { inherit pkgs inputs plugins; };

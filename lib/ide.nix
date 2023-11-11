@@ -17,6 +17,7 @@ let
         tmux-integration.enable = true;
         illuminate.enable = true;
         fold.enable = true;
+        surround.enable = true;
       };
       core.enable = true;
       which-key.enable = true;
