@@ -1,7 +1,7 @@
 {
   description = "DC Neovim Flake";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     neovim = {
       url = "github:neovim/neovim/stable?dir=contrib";

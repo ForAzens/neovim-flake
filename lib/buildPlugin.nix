@@ -6,10 +6,10 @@ with lib;
 with builtins;
 
 let
-  inherit (prev.vimUtils) buildVimPluginFrom2Nix;
+  inherit (prev.vimUtils) buildVimPlugin;
 
   buildPlug = name:
-    buildVimPluginFrom2Nix {
+    buildVimPlugin {
       name = name;
       src = builtins.getAttr name inputs;
     };

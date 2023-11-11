@@ -10,7 +10,7 @@ let
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     nvim_lsp.elixirls.setup({
-      cmd = { "${pkgs.elixir-ls}/bin/elixir-ls" },
+      cmd = { "/opt/homebrew/opt/elixir-ls/libexec/language_server.sh" },
       capabilities = capabilities
     });
   '';
