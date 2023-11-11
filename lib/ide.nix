@@ -31,6 +31,7 @@ let
         nix.enable = true;
         ecmascript.enable = true;
         ruby.enable = true;
+        elixir.enable = true;
       };
     };
   };

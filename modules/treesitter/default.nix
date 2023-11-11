@@ -18,6 +18,7 @@ let
     vim
     javascript
     typescript
+    elixir
     tsx
     sql
     nix
