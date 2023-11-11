@@ -19,6 +19,7 @@ let
     javascript
     typescript
     elixir
+    heex
     tsx
     sql
     nix
