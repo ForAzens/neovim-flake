@@ -7,7 +7,7 @@ let
   cfg = config.vim.editor.indentscope;
   content = ''
     require('mini.indentscope').setup() -- Animation
-    require('indent_blankline').setup() -- Blank line in all scopes
+    require('ibl').setup() -- Blank line in all scopes
   '';
   luaFile = pkgs.writeText "indentscope.lua" content;
 in
