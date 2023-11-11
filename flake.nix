@@ -140,6 +140,16 @@
       flake = false;
     };
 
+    nvim-ufo = {
+      url = "github:kevinhwang91/nvim-ufo";
+      flake = false;
+    };
+
+    promise-async = {
+      url = "github:kevinhwang91/promise-async";
+      flake = false;
+    };
+
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, neovim, ... }:
     flake-utils.lib.eachDefaultSystem
@@ -177,6 +187,8 @@
             "copilot-cmp"
 
             "vim-illuminate"
+            "nvim-ufo"
+            "promise-async"
           ];
 
           lib = import ./lib { inherit pkgs inputs plugins; };

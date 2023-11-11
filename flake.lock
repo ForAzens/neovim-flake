@@ -484,6 +484,22 @@
         "type": "github"
       }
     },
+    "nvim-ufo": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1697594601,
+        "narHash": "sha256-j4607uiabyeR1trnVTF/SqEy/fz7yGvCeclnaL8tXjE=",
+        "owner": "kevinhwang91",
+        "repo": "nvim-ufo",
+        "rev": "ebbab711d909d5f675e38ad489765bd22bd2c6b3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kevinhwang91",
+        "repo": "nvim-ufo",
+        "type": "github"
+      }
+    },
     "nvim-web-devicons": {
       "flake": false,
       "locked": {
@@ -532,6 +548,22 @@
         "type": "github"
       }
     },
+    "promise-async": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1681037971,
+        "narHash": "sha256-TR8DbOJSZuIeqaOx6sMrs3mBc+yYnWyEzhbasQvvWzE=",
+        "owner": "kevinhwang91",
+        "repo": "promise-async",
+        "rev": "e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kevinhwang91",
+        "repo": "promise-async",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "cmp-buffer": "cmp-buffer",
@@ -560,9 +592,11 @@
         "nvim-neo-tree": "nvim-neo-tree",
         "nvim-nui": "nvim-nui",
         "nvim-ts-context-commentstring": "nvim-ts-context-commentstring",
+        "nvim-ufo": "nvim-ufo",
         "nvim-web-devicons": "nvim-web-devicons",
         "plenary-nvim": "plenary-nvim",
         "prettierd": "prettierd",
+        "promise-async": "promise-async",
         "smart-splits": "smart-splits",
         "vim-illuminate": "vim-illuminate",
         "which-key": "which-key"

@@ -7,5 +7,6 @@
     ./comment.nix
     ./tmux-integration.nix
     ./illuminate.nix
+    ./fold.nix
   ];
 }
