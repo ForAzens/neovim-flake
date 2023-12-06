@@ -34,6 +34,7 @@ let
         ecmascript.enable = true;
         ruby.enable = true;
         elixir.enable = true;
+        html.enable = true;
       };
     };
   };

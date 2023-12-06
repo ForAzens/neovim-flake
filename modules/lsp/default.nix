@@ -12,5 +12,6 @@
     ./elixir.nix
     ./copilot.nix
     ./tailwindcss.nix
+    ./html.nix
   ];
 }
