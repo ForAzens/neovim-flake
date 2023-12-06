@@ -12,7 +12,7 @@ let
 
     nvim_lsp.emmet_ls.setup({
       capabilities = capabilities,
-      filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "elixir" },
+      filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "elixir", "heex" },
       init_options = {
         html = {
           options = {
