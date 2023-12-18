@@ -2,7 +2,7 @@ local opt = { noremap = true, silent = true }
 local telescope = require("telescope")
 
 telescope.setup({})
-vim.keymap.set("n", "<leader><leader>", ":lua require('telescope.builtin').find_files()<CR>", { desc = "Find files" })
+vim.keymap.set("n", "<leader><leader>", ":lua require('telescope.builtin').find_files({ find_command = {'rg', '-uu', '--files', '--hidden', '-g', '!node_modules', '-g', '!.git/*'} })<CR>", { desc = "Find files" })
 vim.keymap.set("n", "<leader>/", ":lua require('telescope.builtin').live_grep()<CR>", { desc = "Grep (root dir)" })
 vim.keymap.set("n", "<leader>:", ":Telescope command_history<CR>", { desc = "Command history"} )
 vim.keymap.set("n", "<leader>,", ":Telescope buffers show_all_buffers=true<CR>", { desc = "Switch Buffer" })
