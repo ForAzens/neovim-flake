@@ -11,6 +11,7 @@ let
 
     nvim_lsp.solargraph.setup({
       capabilities = capabilities,
+      cmd = { "solargraph", "stdio" }
     });
   '';
   luaFile = pkgs.writeText "ruby_lsp.lua" content;
