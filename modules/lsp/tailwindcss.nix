@@ -13,18 +13,32 @@ let
     nvim_lsp.tailwindcss.setup({
       capabilities = capabilities,
       init_options = {
+        userLanguages = {
+             elixir = "phoenix-heex",
+             heex = "phoenix-heex",
+         },
         tailwindcss = {
           path = "${pkgs.nodePackages."@tailwindcss/language-server"}/bin/tailwindcss-language-server"
         },
       },
       settings = {
+        includeLanguages = {
+             ["html-eex"] = "html",
+             ["phoenix-heex"] = "html",
+             eelixir = "html",
+             heex = "html",
+         },
         tailwindCSS = {
           experimental = {
             classRegex = {
               { "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
-              { "cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" }
+              { "cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+              [[class= "([^"]*)]],
+              [[class: "([^"]*)]],
+              '~H""".*class="([^"]*)".*"""',
             },
           },
+          validate = true
         },
       },
     })
@@ -44,4 +58,3 @@ in
     ];
   };
 }
-
